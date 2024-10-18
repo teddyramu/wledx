@@ -31,7 +31,7 @@ jobs:
         npm install
         echo '[env:custom_build]' >>platformio.ini
         echo 'extends = env:esp32_4MB_S' >>platformio.ini
-        echo 'build_flags = ${env:esp32_4MB_S.build_flags} -D WLED_DISABLE_ESPNOW -D WLED_DISABLE_BROWNOUT_DET -D USERMOD_AUTO_PLAYLIST -D USERMOD_AUTO_SAVE' >>platformio.ini
+        echo 'build_flags = ${env:esp32_4MB_S.build_flags} -D WLED_DISABLE_ESPNOW -D WLED_DISABLE_BROWNOUT_DET -D USERMOD_AUTO_PLAYLIST -D USERMOD_AUTO_SAVE -D WLED_ENABLE_ALEXA' >>platformio.ini
         
         echo 'build_unflags= -D WLED_RELEASE_NAME' >>platformio.ini
         pio run -e custom_build || pio run -e custom_build
